@@ -36,9 +36,11 @@ possibleTelemarketers = []
 for i in range(len(calls)):
     callerNumber = calls[i][0]
     if (callerNumber not in possibleTelemarketers and 
-        callerNumber not in incomingNumbers and
-        callerNumber not in textNumbers):
+      callerNumber not in incomingNumbers and
+      callerNumber not in textNumbers):
         possibleTelemarketers.append(callerNumber)
+
+possibleTelemarketers.sort()
 
 nl = '\n'
 print(f'These numbers could be telemarketers: {nl}{nl.join(possibleTelemarketers)}')

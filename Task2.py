@@ -32,5 +32,4 @@ for i in range(len(calls)):
         else:
             timeOnPhone[callerNumber] = timeOnPhone[callerNumber] + int(callerTime)
 sortedTime = sorted(timeOnPhone.items(), key=itemgetter(1), reverse=True)
-# print(sortedTime)
 print(f"{sortedTime[0][0]} spent the longest time, {sortedTime[0][1]} seconds, on the phone during September 2016.")
