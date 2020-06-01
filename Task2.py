@@ -23,9 +23,9 @@ from operator import itemgetter
 uniqueNumbers = []
 timeOnPhone = {}
 for i in range(len(calls)):
-    callerNumber = calls[i][j]
     callerTime = calls[i][3]
     for j in range(2):
+        callerNumber = calls[i][j]
         if callerNumber not in uniqueNumbers:
             uniqueNumbers.append(callerNumber)
             timeOnPhone[callerNumber] = int(callerTime)

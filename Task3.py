@@ -69,4 +69,4 @@ for i in range(len(calls)):
 uniqueAreas.sort()
 nl = '\n'
 print(f'The numbers called by people in Bangalore have codes: {nl}{nl.join(uniqueAreas)}')
-print(f"{round(totalFixedToFixedCalls / totalFixedCalls, 2)} percent of calls from fixed lines in Bangalore are calls to other fixed lines in Bangalore.")
+print(f'{round(totalFixedToFixedCalls / totalFixedCalls, 2)} percent of calls from fixed lines in Bangalore are calls to other fixed lines in Bangalore.')
