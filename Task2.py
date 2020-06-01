@@ -19,4 +19,16 @@ Print a message:
 "<telephone number> spent the longest time, <total time> seconds, on the phone during 
 September 2016.".
 """
-
+from operator import itemgetter
+uniqueNumbers = []
+timeOnPhone = {}
+for i in range(len(calls)):
+    for j in range(2):
+        if calls[i][j] not in uniqueNumbers:
+            uniqueNumbers.append(calls[i][j])
+            timeOnPhone[calls[i][j]] = int(calls[i][3])
+        else:
+            timeOnPhone[calls[i][j]] = timeOnPhone[calls[i][j]] + int(calls[i][3])
+sortedTime = sorted(timeOnPhone.items(), key=itemgetter(1), reverse=True)
+# print(sortedTime)
+print(f"{sortedTime[0][0]} spent the longest time, {sortedTime[0][1]} seconds, on the phone during September 2016.")

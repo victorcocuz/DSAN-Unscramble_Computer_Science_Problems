@@ -22,6 +22,7 @@ Print a message:
 
 uniqueNumbers = []
 for i in range(len(calls)):
-    if calls[i][0] not in uniqueNumbers:
-        uniqueNumbers.append(calls[i][0])
+    for j in range(2):
+        if calls[i][j] not in uniqueNumbers:
+            uniqueNumbers.append(calls[i][j])
 print(f"There are {len(uniqueNumbers)} different telephone numbers in the records.")
