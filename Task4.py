@@ -24,4 +24,8 @@ Print a message:
 <list of numbers>
 The list of numbers should be print out one per line in lexicographic order with no duplicates.
 """
+# telemarketers = []
+# for i in range(len(calls)):
+#   if calls[i][0].startswith('140') and calls[i][0] not in telemarketers:
+
 

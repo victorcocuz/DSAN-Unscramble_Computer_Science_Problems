@@ -43,3 +43,30 @@ Print the answer as a part of a message::
 to other fixed lines in Bangalore."
 The percentage should have 2 decimal digits
 """
+def getArea(number):
+  if number.startswith('140'):
+    return str(140)
+  elif '(' in number:
+    return number.split(')')[0][1:]
+  else:
+    return number.split(' ')[0]
+
+uniqueAreas = []
+totalFixedCalls = 0
+totalFixedToFixedCalls = 0
+for i in range(len(calls)):
+  if calls[i][0].startswith('(080)'):
+    # get areas
+    area = getArea(calls[i][1])
+    if area not in uniqueAreas:
+      uniqueAreas.append(area)
+
+    # get number of calls to fixed lines
+    totalFixedCalls += 1
+    if calls[i][1].startswith('(080)'):
+      totalFixedToFixedCalls += 1
+
+uniqueAreas.sort()
+nl = '\n'
+print(f'The numbers called by people in Bangalore have codes: {nl}{nl.join(uniqueAreas)}')
+print(f"{round(totalFixedToFixedCalls / totalFixedCalls, 2)} percent of calls from fixed lines in Bangalore are calls to other fixed lines in Bangalore.")
