@@ -18,3 +18,10 @@ How many different telephone numbers are there in the records?
 Print a message:
 "There are <count> different telephone numbers in the records."
 """
+# from operator import itemgetter, attrgetter
+
+uniqueNumbers = []
+for i in range(len(calls)):
+    if calls[i][0] not in uniqueNumbers:
+        uniqueNumbers.append(calls[i][0])
+print(f"There are {len(uniqueNumbers)} different telephone numbers in the records.")
