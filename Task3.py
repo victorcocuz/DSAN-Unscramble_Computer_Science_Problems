@@ -46,10 +46,12 @@ The percentage should have 2 decimal digits
 def getArea(number):
   if number.startswith('140'):
     return str(140)
+    # pass
   elif '(' in number:
     return number.split(')')[0][1:]
+    # pass
   else:
-    return number.split(' ')[0]
+    return number[:4]
 
 uniqueAreas = []
 totalFixedCalls = 0
@@ -69,4 +71,5 @@ for i in range(len(calls)):
 uniqueAreas.sort()
 nl = '\n'
 print(f'The numbers called by people in Bangalore have codes: {nl}{nl.join(uniqueAreas)}')
-print(f'{round(totalFixedToFixedCalls / totalFixedCalls, 2):.0%} percent of calls from fixed lines in Bangalore are calls to other fixed lines in Bangalore.')
+# print(f'{round(totalFixedToFixedCalls / totalFixedCalls, 2):.0%} percent of calls from fixed lines in Bangalore are calls to other fixed lines in Bangalore.')
+print(f'{round(totalFixedToFixedCalls / totalFixedCalls * 100, 2)} percent of calls from fixed lines in Bangalore are calls to other fixed lines in Bangalore.')
