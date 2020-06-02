@@ -20,10 +20,12 @@ Print a message:
 """
 # from operator import itemgetter, attrgetter
 
-uniqueNumbers = []
+uniqueNumbers = set()
 for i in range(len(calls)):
-    for j in range(2):
-        number = calls[i][j]
-        if number not in uniqueNumbers:
-            uniqueNumbers.append(number)
+    uniqueNumbers.add(calls[i][0])
+    uniqueNumbers.add(calls[i][1])
+for i in range(len(texts)):
+    uniqueNumbers.add(texts[i][0])
+    uniqueNumbers.add(texts[i][1])
+
 print(f"There are {len(uniqueNumbers)} different telephone numbers in the records.")
